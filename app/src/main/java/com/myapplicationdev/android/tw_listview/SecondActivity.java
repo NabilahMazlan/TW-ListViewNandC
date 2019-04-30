@@ -26,9 +26,12 @@ public class SecondActivity extends AppCompatActivity {
 
         lv = (ListView) this.findViewById(R.id.lvModules);
         tvYear = (TextView) findViewById(R.id.tvYear);
+        btnBack = (Button) findViewById(R.id.buttonBack);
 
         Intent i = getIntent();
         String year = i.getStringExtra("year");
+        module = new ArrayList<Module>();
+
         tvYear.setText(year);
 
         btnBack.setOnClickListener(new View.OnClickListener() {
@@ -58,6 +61,8 @@ public class SecondActivity extends AppCompatActivity {
         aa = new ModuleAdapter(this, R.layout.row, module);
         lv.setAdapter(aa);
     }
+
+
 
 
     }
